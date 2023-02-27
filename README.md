@@ -4,7 +4,7 @@
 
 ### Projects:
 
-- [Unit's project 1]()
+- [Unit's project 1](https://github.com/Hudson-Pufferfish/codepath-hw/tree/unit01)
 - [Unit's project 2]()
 - [Unit's project 3]()
 - [Unit's project 4]()
