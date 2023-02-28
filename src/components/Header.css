@@ -1,4 +1,13 @@
-header {
+
+@media (max-width: 576px) {
+  h1 {
+    margin-bottom: 1rem;
+  }
+
+}
+
+@media (min-width: 992px) {
+  header {
     margin: 50px;
     text-align: center;
     mix-blend-mode: multiply;
@@ -168,3 +177,4 @@ header {
       transform: translateX(1.2%);
     }
   }
+}
