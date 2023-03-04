@@ -1,25 +1,43 @@
-# This is a collection of projects in WEB102 | Intermediate Web Development - Spring 2023
+# Web Development Project 2 - *Name of App Here*
 
-## Table of Contents:
+Submitted by: **Hudson Nguyen**
 
-### Projects:
+This web app: **insert description**
 
-- [Unit's project 1](https://github.com/Hudson-Pufferfish/codepath-hw/tree/unit01)
-- [Unit's project 2]()
-- [Unit's project 3]()
-- [Unit's project 4]()
-- [Unit's project 5]()
-- [Unit's project 6]()
-- [Unit's project 7]()
-- [Unit's project 8]()
-- [Unit's project 9]()
-- [Unit's project 10]()
+Time spent: **X** hours spent in total
 
+## Required Features
 
+The following **required** functionality is completed:
 
-## Contributor:
+- [ ] **The title of the card set and some information about it, such as a short description and the total number of cards are displayed**
+- [ ] **A single card at a time is displayed, only showing one of the components of the information pair**
+- [ ] **A list of card pairs is created**
+- [ ] **Clicking on the card shows the corresponding component of the information pair**
+- [ ] **Clicking the next button displays a random new card**
 
-- Hudson Nguyen - Luther College
+The following **optional** features are implemented:
+
+- [ ] Cards contains images in addition to or in place of text
+- [ ] Cards have different visual styles such as color based on their category
+  - [ ] *visual style implemented*
+
+The following **additional** features are implemented:
+
+* [ ] List anything else that you added to improve the site's functionality!
+
+## Video Walkthrough
+
+Here's a walkthrough of implemented required features:
+
+<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+<!-- Replace this with whatever GIF tool you used! -->
+GIF created with [peek](https://github.com/phw/peek) for Linux.
+
+## Notes
+
+Describe any challenges encountered while building the app.
 
 ## License
 
