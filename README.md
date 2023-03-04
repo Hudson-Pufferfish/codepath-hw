@@ -5,15 +5,15 @@
 ### Projects:
 
 - [Unit's project 1](https://github.com/Hudson-Pufferfish/codepath-hw/tree/unit01)
-- [Unit's project 2]()
-- [Unit's project 3]()
-- [Unit's project 4]()
-- [Unit's project 5]()
-- [Unit's project 6]()
-- [Unit's project 7]()
-- [Unit's project 8]()
-- [Unit's project 9]()
-- [Unit's project 10]()
+- [Unit's project 2](https://github.com/Hudson-Pufferfish/codepath-hw/tree/unit02)
+- [Unit's project 3](https://github.com/Hudson-Pufferfish/codepath-hw/tree/unit03)
+- [Unit's project 4](https://github.com/Hudson-Pufferfish/codepath-hw/tree/unit04)
+- [Unit's project 5](https://github.com/Hudson-Pufferfish/codepath-hw/tree/unit05)
+- [Unit's project 6](https://github.com/Hudson-Pufferfish/codepath-hw/tree/unit06)
+- [Unit's project 7](https://github.com/Hudson-Pufferfish/codepath-hw/tree/unit07)
+- [Unit's project 8](https://github.com/Hudson-Pufferfish/codepath-hw/tree/unit08)
+- [Unit's project 9](https://github.com/Hudson-Pufferfish/codepath-hw/tree/unit09)
+- [Unit's project 10](https://github.com/Hudson-Pufferfish/codepath-hw/tree/unit10)
 
 
 
