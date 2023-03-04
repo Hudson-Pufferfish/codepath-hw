@@ -2,14 +2,22 @@ import React from 'react';
 import './Header.css';
 
 const Header = () => {
+  const header = "Capital city guess game"
+  const headerArr = header.split(' ')
+
   return (
     <div>
       <header>
-        <h1 data-text="Capital city guess game">
-          <span class="glitch1" data-text="MLH Hackathons" aria-hidden></span>
-          <span class="glitch2" data-text="MLH Hackathons" aria-hidden></span>
-          Capital city guess game
-        </h1>
+        <div class="smoke" >
+          <ul>
+          {
+              headerArr.map((char) => (
+              <li key={char}> {char}</li>
+            ))
+          }
+          </ul>
+      
+        </div>
       </header>
     </div>
   );
