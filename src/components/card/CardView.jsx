@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useState, useCallback } from 'react';
 import './CardView.css';
-import { useState } from 'react';
 import CARD_DATA from '../../../server/cards.js'
 import Button from '../button/Button';
 
@@ -11,9 +10,9 @@ const CardView = () => {
   const handleFlipCard = () => {
     setFront(isFront => !isFront)
   }
-
   
   const handleSwitchCard = (dir) => {
+    console.log('clicked');
     switch (dir) {
       case 'PREVIOUS':
         // const prevCard = CARD_DATA.find(c => c.id === (card.id > 1 ? card.id - 1 : 1))
@@ -34,6 +33,9 @@ const CardView = () => {
     }
   }
 
+  const handlePrevCard = useCallback(() => handleSwitchCard('PREVIOUS'), [])
+  const handleNextCard = useCallback(() => handleSwitchCard('NEXT'), [])
+    
   return (
     <div>
       <div className="flip-card">
@@ -53,8 +55,10 @@ const CardView = () => {
         </div>
       </div>
       <div className='dir-btn'>
-        <Button onHandleCard={() => handleSwitchCard('PREVIOUS')}>Previous</Button>
-        <Button onHandleCard={() => handleSwitchCard('NEXT')}>Next</Button>
+        {/* <Button onHandleCard={() => handleSwitchCard('PREVIOUS')}>Previous</Button> */}
+        {/* <Button onHandleCard={() => handleSwitchCard('NEXT')}>Next</Button> */}
+        <Button onHandleCard={handlePrevCard}>Previous</Button>
+        <Button onHandleCard={handleNextCard}>Next</Button>
       </div>
     </div>
   );

@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { memo } from 'react';
 import './Button.css';
 
-const Button = ({ children, onHandleCard }) => {
-  
+const Button = ({ children, onHandleCard }) => {  
   return (
     <div >
       <button className='btn' onClick={onHandleCard}>{ children.toUpperCase()}</button>
@@ -10,4 +9,4 @@ const Button = ({ children, onHandleCard }) => {
   );
 };
 
-export default Button;
+export default memo(Button);
