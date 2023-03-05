@@ -36,7 +36,7 @@ const CardView = () => {
 
   return (
     <div>
-      <div className="card-view">
+      <div className="flip-card">
         <div className={`flip-card-inner ${card.level ?? ''}`} onClick={handleFlipCard}>
           {
             (() => {
