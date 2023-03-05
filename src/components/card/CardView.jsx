@@ -36,8 +36,19 @@ const CardView = () => {
 
   return (
     <div className="card-view">
-      <div className={`card ${card.level ?? ''}`} onClick={handleFlipCard}>
-        {isFront ? (card.question ?? '') : (card.answer ?? '')}
+      <div className={`flip-card ${card.level ?? ''}`} onClick={handleFlipCard}>
+        {
+          (() => {
+            switch (isFront) {
+              case true:
+                return <div className="flip-card-front">{(card.question ?? '')}</div>
+              case false:
+                return <div className="flip-card-back">{(card.answer ?? '')}</div>
+              default:
+                return
+            }
+          })()
+        }
       </div>
       <div className='dir-btn'>
         <Button content="previous" onHandleCard={() => handleSwitchCard('PREVIOUS')}/>

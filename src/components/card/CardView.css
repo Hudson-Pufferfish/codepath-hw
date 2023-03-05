@@ -1,4 +1,4 @@
-.card {
+.flip-card {
     color: #333;
     font-weight: 600;
     text-align: center;
@@ -28,14 +28,14 @@
     justify-content: center;
 }
 
-.card.easy {
+.flip-card.easy {
     background: rgba( 147, 196, 125, 0.6 );
 }
 
-.card.medium {
+.flip-card.medium {
     background: rgba( 241, 194, 50, 0.6 );
 }
 
-.card.hard {
+.flip-card.hard {
     background: rgba( 224, 102, 102, 0.6 );
 }
