@@ -1,11 +1,11 @@
 import React from 'react';
 import './Button.css';
 
-const Button = ({ content, onHandleCard }) => {
+const Button = ({ children, onHandleCard }) => {
   
   return (
     <div >
-      <button className='btn' onClick={onHandleCard}>{ content.toUpperCase()}</button>
+      <button className='btn' onClick={onHandleCard}>{ children.toUpperCase()}</button>
     </div>
   );
 };

@@ -53,8 +53,8 @@ const CardView = () => {
         </div>
       </div>
       <div className='dir-btn'>
-        <Button content="previous" onHandleCard={() => handleSwitchCard('PREVIOUS')}/>
-        <Button content="next" onHandleCard={() => handleSwitchCard('NEXT')}/>
+        <Button onHandleCard={() => handleSwitchCard('PREVIOUS')}>Previous</Button>
+        <Button onHandleCard={() => handleSwitchCard('NEXT')}>Next</Button>
       </div>
     </div>
   );
