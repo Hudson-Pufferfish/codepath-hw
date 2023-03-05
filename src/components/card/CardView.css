@@ -32,13 +32,13 @@
 }
 
 .flip-card-inner.easy {
-    background: rgba( 147, 196, 125, 0.6 );
+    background: rgba( 147, 196, 125, 0.4 );
 }
 
 .flip-card-inner.medium {
-    background: rgba( 241, 194, 50, 0.6 );
+    background: rgba( 241, 194, 50, 0.4 );
 }
 
 .flip-card-inner.hard {
-    background: rgba( 224, 102, 102, 0.6 );
+    background: rgba( 224, 102, 102, 0.4 );
 }
