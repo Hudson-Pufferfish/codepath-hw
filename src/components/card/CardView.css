@@ -14,15 +14,15 @@
 }
 
 .flip-card.easy :where(.flip-card-front, .flip-card-back) {
-    background: rgba( 147, 196, 125, 0.4 );
+    background: rgba( 147, 196, 125, 0.35 );
 }
 
 .flip-card.medium :where(.flip-card-front, .flip-card-back) {
-    background: rgba( 241, 194, 50, 0.4 );
+    background: rgba( 241, 194, 50, 0.35 );
 }
 
 .flip-card.hard :where(.flip-card-front, .flip-card-back) {
-    background: rgba( 224, 102, 102, 0.4 );
+    background: rgba( 224, 102, 102, 0.35 );
 }
 
 /* CSS 3d flip card */
@@ -49,17 +49,16 @@
     border: 1px solid rgba( 255, 255, 255, 0.18 );
     width: 28rem;
     height: 14rem;
+    transition: transform linear 0.2s;
 }
 
 .flip-card .flip-card-front {
     position: absolute;
     transform: rotateX(90deg);
-    transition: all linear 0.2s;
 }
 
 .flip-card .flip-card-back {
     position: absolute;
-    transition: all linear 0.2s;
     transition-delay: 0.2s;
 }
 
