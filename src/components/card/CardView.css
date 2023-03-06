@@ -1,4 +1,6 @@
-.flip-card-inner {
+
+
+.flip-card {
     color: #333;
     font-weight: 600;
     text-align: center;
@@ -22,7 +24,8 @@
     border-radius: 1.2rem;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
 
-    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+    
+
 }
 
 .dir-btn {
@@ -30,14 +33,14 @@
     justify-content: center;
 }
 
-.flip-card-inner.easy {
+.flip-card.easy {
     background: rgba( 147, 196, 125, 0.4 );
 }
 
-.flip-card-inner.medium {
+.flip-card.medium {
     background: rgba( 241, 194, 50, 0.4 );
 }
 
-.flip-card-inner.hard {
+.flip-card.hard {
     background: rgba( 224, 102, 102, 0.4 );
 }
