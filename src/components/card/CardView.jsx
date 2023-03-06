@@ -48,7 +48,7 @@ const CardView = () => {
                 case false:
                   return <div className="flip-card-back">{(card.answer ?? '')}</div>
                 default:
-                  return
+                  return null
               }
             })()
           }
