@@ -24,9 +24,7 @@
 .flip-card.hard :where(.flip-card-front, .flip-card-back) {
     background: rgba( 224, 102, 102, 0.35 );
 }
-
 /* CSS 3d flip card */
-
 .flip-card :where(.flip-card-front, .flip-card-back) {
     color: #333;
     font-weight: 600;
