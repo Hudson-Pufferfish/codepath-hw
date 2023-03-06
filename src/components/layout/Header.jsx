@@ -1,5 +1,6 @@
 import React from 'react';
 import './Header.css';
+import CARD_DATA from '../../../server/cards.js'
 
 const Header = () => {
   const header = "Test your capital city knowledge here!"
@@ -24,7 +25,7 @@ const Header = () => {
           </ul>
       
       </div>
-
+      <h3 className="info">{`There are ${CARD_DATA.length} cards in total`}</h3>
     </div>
   );
 };
