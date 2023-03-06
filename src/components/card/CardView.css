@@ -1,46 +1,74 @@
-
-
 .flip-card {
-    color: #333;
-    font-weight: 600;
-    text-align: center;
-    font-size: 1.6rem;
     width: 28rem;
     height: 14rem;
-    margin: 0.6rem auto;
-    display: grid;
-    place-items:  center;
-    cursor: pointer;
-    -webkit-user-select: none; /* Safari */
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* IE10+/Edge */
-    user-select: none; /* Standard syntax */
-
-
-    background: rgba( 255, 255, 255, 0.25 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 10.5px );
-    -webkit-backdrop-filter: blur( 10.5px );
+    left: 50%;
+    transform: translateX(-50%);
+    position: relative;
     border-radius: 1.2rem;
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
-
-    
-
 }
 
 .dir-btn {
     display: flex;
     justify-content: center;
+    margin-top: 2rem;
 }
 
-.flip-card.easy {
+.flip-card.easy :where(.flip-card-front, .flip-card-back) {
     background: rgba( 147, 196, 125, 0.4 );
 }
 
-.flip-card.medium {
+.flip-card.medium :where(.flip-card-front, .flip-card-back) {
     background: rgba( 241, 194, 50, 0.4 );
 }
 
-.flip-card.hard {
+.flip-card.hard :where(.flip-card-front, .flip-card-back) {
     background: rgba( 224, 102, 102, 0.4 );
+}
+
+/* CSS 3d flip card */
+
+.flip-card :where(.flip-card-front, .flip-card-back) {
+    color: #333;
+    font-weight: 600;
+    font-size: 1.6rem;
+    margin: 0.6rem auto;
+    display: grid;
+    place-items:  center;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none; 
+    text-align: center;
+    background: rgba( 255, 255, 255, 0.25 );
+    background-color: inherit;
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 10.5px );
+    -webkit-backdrop-filter: blur( 10.5px );
+    border-radius: 1.2rem;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    width: 28rem;
+    height: 14rem;
+}
+
+.flip-card .flip-card-front {
+    position: absolute;
+    transform: rotateX(90deg);
+    transition: all linear 0.2s;
+}
+
+.flip-card .flip-card-back {
+    position: absolute;
+    transition: all linear 0.2s;
+    transition-delay: 0.2s;
+}
+
+.front .flip-card-front {
+    transform: rotateX(0deg);
+    transition-delay: 0.2s;
+}
+
+.front .flip-card-back {
+    transform: rotateX(90deg);
+    transition-delay: 0s;
 }

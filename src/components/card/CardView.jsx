@@ -39,8 +39,10 @@ const CardView = () => {
   return (
     <div>
       <div className={`flip-card ${card.level ?? ''}`} onClick={handleFlipCard}>
-        <div className="flip-card-inner" >
-          {
+        <div className={`flip-card-inner ${isFront ? 'front' : ''}`} >
+          <div className="flip-card-front"><p>{(card.question ?? '')}</p></div>
+          <div className="flip-card-back"><p>{(card.answer ?? '')}</p></div>
+          {/* {
             (() => {
               switch (isFront) {
                 case true:
@@ -51,7 +53,7 @@ const CardView = () => {
                   return null
               }
             })()
-          }
+          } */}
         </div>
       </div>
       <div className='dir-btn'>
