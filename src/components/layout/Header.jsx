@@ -25,7 +25,7 @@ const Header = () => {
           </ul>
       
       </div>
-      <h3 className="info">{`There are ${CARD_DATA.length} cards in total`}</h3>
+      <h4 className="info">{`There are ${CARD_DATA.length} cards in total`}</h4>
     </div>
   );
 };
