@@ -2,9 +2,9 @@
 
 Submitted by: **Hudson Nguyen**
 
-This web app: **insert description**
+This web app: **Guess game of capital cities**
 
-Time spent: **X** hours spent in total
+Time spent: **4** hours spent in total
 
 ## Required Features
 
@@ -20,17 +20,17 @@ The following **optional** features are implemented:
 
 - [ ] Cards contains images in addition to or in place of text
 - [x] Cards have different visual styles such as color based on their category
-  - [ ] *visual style implemented*
+  - [x] *visual style implemented*
 
 The following **additional** features are implemented:
 
-* [x] List anything else that you added to improve the site's functionality!
+* [x] Add useCallback + memo to optimize React performance (number of rendering times of components)!
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented required features:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='assets/demo.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
 GIF created with [peek](https://github.com/phw/peek) for Linux.
