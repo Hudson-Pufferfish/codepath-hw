@@ -58,6 +58,16 @@
 .flip-card .flip-card-back {
     position: absolute;
     transition-delay: 0.2s;
+    display: flex;
+    justify-content: space-around;
+}
+
+.flip-card-back img {
+    border-radius: 12rem;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .front .flip-card-front {

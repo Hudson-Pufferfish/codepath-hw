@@ -41,7 +41,10 @@ const CardView = () => {
       <div className={`flip-card ${card.level ?? ''}`} onClick={handleFlipCard}>
         <div className={`flip-card-inner ${isFront ? 'front' : ''}`} >
           <div className="flip-card-front"><p>{(card.question ?? '')}</p></div>
-          <div className="flip-card-back"><p>{(card.answer ?? '')}</p></div>
+          <div className="flip-card-back">
+              <img srcSet={card.img ?? ''} alt="answer" />
+            <p>{(card.answer ?? '')}</p>
+          </div>
           {/* {
             (() => {
               switch (isFront) {
