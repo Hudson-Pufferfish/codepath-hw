@@ -1,4 +1,4 @@
-# Web Development Project 2 - *Name of App Here*
+# Web Development Project 2 - *Guess game of capital cities*
 
 Submitted by: **Hudson Nguyen**
 
