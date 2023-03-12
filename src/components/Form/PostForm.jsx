@@ -1,10 +1,22 @@
 import './PostForm.css';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
-const PostForm = ({ handleSubmitForm }) => {
-  const [postForm, setPostForm] = useState({});
+const PostForm = ({ handleSubmitForm, card, checkCorrect }) => {
+  const [postForm, setPostForm] = useState({ answer: '', streak: 0 });
+
+    console.log("🚀 ------------------------------------------🚀")
+    console.log("🚀 ~ PostForm ~ checkCorrect:", checkCorrect)
+    console.log("🚀 ------------------------------------------🚀")
+
   const handleChange = useRef();
   const handleSubmit = useRef();
+
+  useEffect(() => {
+    setPostForm(prevPostForm => ({
+      ...prevPostForm, 
+      answer: '',
+    }))
+  }, [card])
   
   handleChange.current = (e) => {
     const key = e.target.name;
@@ -27,12 +39,14 @@ const PostForm = ({ handleSubmitForm }) => {
         <input
           name="answer"
           type="text"
-          id="answer" 
+          id="answer"
+          value={postForm.answer}
           className='answer-input' 
           placeholder='Type your answer here...' 
           onChange={handleChange.current}
         />
         <input type="submit" value="Submit" className="submit-btn" />
+        <div className='user-streak'>{`Your current streak: ${postForm.streak}`}</div>
       </form>
     </>
   );

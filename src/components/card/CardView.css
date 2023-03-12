@@ -82,13 +82,27 @@
 }
 
 .ans-checker {
-    color: #fff;
-    margin: 0 auto;
+    margin: 1.5rem auto;
     display: grid;
     place-items: center;
     font-weight: 600;
-    background-color: rgb(251, 79, 79);
     border-radius: 0.6rem;
     width: 20rem;
     height: 3rem;
+}
+
+.ans-checker.init {
+    color: transparent;
+}
+
+.ans-checker.false {
+    background-color: rgb(255, 39, 39);
+    color: #fff;
+    transition: all 0.2s ease-in-out;
+}
+
+.ans-checker.true {
+    background-color: rgb(15, 173, 76);
+    color: #fff;
+    transition: all 0.2s ease-in-out;
 }

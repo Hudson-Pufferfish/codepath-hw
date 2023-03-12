@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useMemo } from 'react';
 import './CardView.css';
 import CARD_DATA from '../../../server/cards.js'
 import Button from '../button/Button';
@@ -8,13 +8,19 @@ const CardView = () => {
   const [card, setCard] = useState(CARD_DATA[0] ?? ''); 
   const [isFront, setFront] = useState(true);
   const [post, setPost] = useState();
-  const [isCorrect, setIsCorrect] = useState(false);
-  // const rightAns = card.answer.toLowerCase().split(' ')
-  // console.log(rightAns[rightAns.length - 1].includes(post?.answer));
+  
+  const checkCorrect = useMemo(() => {
+    const rightAns = card.answer.toLowerCase().split(' ')
+    const userAns = post?.answer?.toLowerCase().replace(/[.,]/g, "")
+    if (!userAns) return !!userAns
 
+    return rightAns[rightAns.length - 1].includes(userAns)
+  }, [post, card])
+  
   const handleSubmitForm = useCallback((data) => {
     setPost(data)
   }, [])
+  console.log([post]);
 
   const handleFlipCard = useCallback(() => {
     setFront(isFront => !isFront)
@@ -26,15 +32,16 @@ const CardView = () => {
         const prevCard = CARD_DATA.find(c => c.id === (card.id > 1 ? card.id - 1 : 1))
         setCard(prevCard)
         setFront(true)
+        setPost('')
         break;
-      
+        
       case 'NEXT':
-
+        
         const nextCard = CARD_DATA.find(c => c.id === ((card.id < CARD_DATA.length - 1) ? card.id + 1 : CARD_DATA.length - 1))
         setCard(nextCard)
         setFront(true)
-        console.log(nextCard);
-        break;
+        setPost('')
+      break;
       
       default:
         return
@@ -52,11 +59,17 @@ const CardView = () => {
           </div>
         </div>
       </div>
-      <PostForm handleSubmitForm={handleSubmitForm}></PostForm>
-      <div className='ans-checker'>{ `Your answer is ${isCorrect ? 'correct' : 'incorrect, please try again'}`}</div>
+      <PostForm
+        handleSubmitForm={handleSubmitForm}
+        card={card}
+        checkCorrect={checkCorrect}
+      ></PostForm>
       <div className='dir-btn'>
         <Button onHandleCard={() => handleSwitchCard('PREVIOUS')}>Previous</Button>
         <Button onHandleCard={() => handleSwitchCard('NEXT')}>Next</Button>
+      </div>
+      <div className={`ans-checker ${post ? checkCorrect : 'init'}`}>
+        {`Your answer is ${checkCorrect ? 'correct' : 'incorrect, please try again'}`}
       </div>
     </div>
   );

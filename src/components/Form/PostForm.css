@@ -3,7 +3,7 @@
     text-align: center;
 }
 
-.answer-form > label {
+.answer-form > label, .user-streak {
     font-size: 1.2rem;
     color: #fff;
     font-weight: 600;
@@ -35,3 +35,5 @@
     transform: translateY(1px);
     box-shadow: 2px 2px 0 0 #565656;
 }
+
+
