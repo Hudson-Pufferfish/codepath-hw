@@ -1,35 +1,38 @@
 import './PostForm.css';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 
-const PostForm = ({ handleSubmitForm, card, checkCorrect, post }) => {
-  const [postForm, setPostForm] = useState({ answer: '', streak: 0 });
-
-    console.log("🚀 ------------------------------------------🚀")
-    console.log("🚀 ~ PostForm ~ checkCorrect:", checkCorrect)
-    console.log("🚀 ------------------------------------------🚀")
-
+const PostForm = ({ handleSubmitForm, card, post }) => {
+  const [postForm, setPostForm] = useState({ answer: '' });
+  const [streak, setStreak] = useState(0);
   const handleChange = useRef();
   const handleSubmit = useRef();
-
+    
   useEffect(() => {
     setPostForm(prevPostForm => ({
       ...prevPostForm, 
       answer: '',
     }))
   }, [card])
-  
+
+  const checkCorrect = useMemo(() => {
+    const rightAns = card.answer.toLowerCase().split(' ')
+    const userAns = post?.answer?.toLowerCase().replace(/[.,]/g, "")
+    if (!userAns) return !!userAns
+
+    return rightAns[rightAns.length - 1].includes(userAns)
+  }, [post, card])
+
   handleChange.current = (e) => {
     const key = e.target.name;
     setPostForm(prevPostForm => ({
       ...prevPostForm, 
       [key]: e.target.value,
     }))
-    }
+  }
   
   handleSubmit.current = (e) => {
     e.preventDefault();
-    handleSubmitForm(postForm);
-    
+    handleSubmitForm(postForm);    
   }
 
   return (
@@ -46,7 +49,7 @@ const PostForm = ({ handleSubmitForm, card, checkCorrect, post }) => {
           onChange={handleChange.current}
         />
         <input type="submit" value="Submit" className="submit-btn" />
-        <div className='user-streak'>{`Your current streak: ${postForm.streak}`}</div>
+        <div className='user-streak'>{`Your current streak: ${streak}`}</div>
       </form>
       <div className={`ans-checker ${post ? checkCorrect : 'init'}`}>
         {`Your answer is ${checkCorrect ? 'correct' : 'incorrect, please try again'}`}

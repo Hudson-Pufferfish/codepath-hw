@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useMemo } from 'react';
+import React, { useState, useCallback } from 'react';
 import './CardView.css';
 import CARD_DATA from '../../../server/cards.js'
 import Button from '../button/Button';
@@ -9,18 +9,9 @@ const CardView = () => {
   const [isFront, setFront] = useState(true);
   const [post, setPost] = useState();
   
-  const checkCorrect = useMemo(() => {
-    const rightAns = card.answer.toLowerCase().split(' ')
-    const userAns = post?.answer?.toLowerCase().replace(/[.,]/g, "")
-    if (!userAns) return !!userAns
-
-    return rightAns[rightAns.length - 1].includes(userAns)
-  }, [post, card])
-  
   const handleSubmitForm = useCallback((data) => {
     setPost(data)
   }, [])
-  console.log([post]);
 
   const handleFlipCard = useCallback(() => {
     setFront(isFront => !isFront)
@@ -66,7 +57,6 @@ const CardView = () => {
       <PostForm
         handleSubmitForm={handleSubmitForm}
         card={card}
-        checkCorrect={checkCorrect}
         post={post}
       ></PostForm>
     </div>
