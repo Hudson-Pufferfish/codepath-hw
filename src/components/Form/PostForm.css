@@ -1,0 +1,37 @@
+.answer-form {
+    margin: 2rem;
+    text-align: center;
+}
+
+.answer-form > label {
+    font-size: 1.2rem;
+    color: #fff;
+    font-weight: 600;
+}
+
+.answer-form > .answer-input  {
+    border-radius: 0.4rem;
+    margin-left: 0.8rem;
+    padding: 0.2rem 0.8rem;
+    color: #474747;
+}
+
+.answer-form > .answer-input :focus {
+    outline: 5px solid rgb(71, 71, 71);
+    box-shadow: 0 4px 12px 2px #565656;
+}
+
+.submit-btn {
+    padding: 0.5em 1.2em;
+    margin: 1em;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    color: white;
+    background-color: #292929;
+    box-shadow: 0 4px 12px 2px #565656;
+}
+
+.submit-btn:active {
+    transform: translateY(1px);
+    box-shadow: 2px 2px 0 0 #565656;
+}

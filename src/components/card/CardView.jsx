@@ -2,18 +2,25 @@ import React, { useState, useCallback } from 'react';
 import './CardView.css';
 import CARD_DATA from '../../../server/cards.js'
 import Button from '../button/Button';
+import PostForm from '../Form/PostForm';
 
 const CardView = () => {
   const [card, setCard] = useState(CARD_DATA[0] ?? ''); 
   const [isFront, setFront] = useState(true);
+  const [post, setPost] = useState();
+  const [isCorrect, setIsCorrect] = useState(false);
+  // const rightAns = card.answer.toLowerCase().split(' ')
+  // console.log(rightAns[rightAns.length - 1].includes(post?.answer));
+
+  const handleSubmitForm = useCallback((data) => {
+    setPost(data)
+  }, [])
 
   const handleFlipCard = useCallback(() => {
     setFront(isFront => !isFront)
   }, [])
   
   const handleSwitchCard = useCallback((dir) => {
-    console.log(CARD_DATA);
-    console.log('clicked');
     switch (dir) {
       case 'PREVIOUS':
         const prevCard = CARD_DATA.find(c => c.id === (card.id > 1 ? card.id - 1 : 1))
@@ -45,6 +52,8 @@ const CardView = () => {
           </div>
         </div>
       </div>
+      <PostForm handleSubmitForm={handleSubmitForm}></PostForm>
+      <div className='ans-checker'>{ `Your answer is ${isCorrect ? 'correct' : 'incorrect, please try again'}`}</div>
       <div className='dir-btn'>
         <Button onHandleCard={() => handleSwitchCard('PREVIOUS')}>Previous</Button>
         <Button onHandleCard={() => handleSwitchCard('NEXT')}>Next</Button>

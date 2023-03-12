@@ -10,6 +10,7 @@
 .dir-btn {
     display: flex;
     justify-content: center;
+    gap: 2em;
     margin-top: 2rem;
 }
 
@@ -78,4 +79,16 @@
 .front .flip-card-back {
     transform: rotateX(90deg);
     transition-delay: 0s;
+}
+
+.ans-checker {
+    color: #fff;
+    margin: 0 auto;
+    display: grid;
+    place-items: center;
+    font-weight: 600;
+    background-color: rgb(251, 79, 79);
+    border-radius: 0.6rem;
+    width: 20rem;
+    height: 3rem;
 }
