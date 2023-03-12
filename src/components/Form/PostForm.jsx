@@ -1,7 +1,7 @@
 import './PostForm.css';
 import { useEffect, useRef, useState } from 'react';
 
-const PostForm = ({ handleSubmitForm, card, checkCorrect }) => {
+const PostForm = ({ handleSubmitForm, card, checkCorrect, post }) => {
   const [postForm, setPostForm] = useState({ answer: '', streak: 0 });
 
     console.log("🚀 ------------------------------------------🚀")
@@ -48,6 +48,9 @@ const PostForm = ({ handleSubmitForm, card, checkCorrect }) => {
         <input type="submit" value="Submit" className="submit-btn" />
         <div className='user-streak'>{`Your current streak: ${postForm.streak}`}</div>
       </form>
+      <div className={`ans-checker ${post ? checkCorrect : 'init'}`}>
+        {`Your answer is ${checkCorrect ? 'correct' : 'incorrect, please try again'}`}
+      </div>
     </>
   );
 };

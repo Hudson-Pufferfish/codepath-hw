@@ -59,18 +59,16 @@ const CardView = () => {
           </div>
         </div>
       </div>
-      <PostForm
-        handleSubmitForm={handleSubmitForm}
-        card={card}
-        checkCorrect={checkCorrect}
-      ></PostForm>
       <div className='dir-btn'>
         <Button onHandleCard={() => handleSwitchCard('PREVIOUS')}>Previous</Button>
         <Button onHandleCard={() => handleSwitchCard('NEXT')}>Next</Button>
       </div>
-      <div className={`ans-checker ${post ? checkCorrect : 'init'}`}>
-        {`Your answer is ${checkCorrect ? 'correct' : 'incorrect, please try again'}`}
-      </div>
+      <PostForm
+        handleSubmitForm={handleSubmitForm}
+        card={card}
+        checkCorrect={checkCorrect}
+        post={post}
+      ></PostForm>
     </div>
   );
 };
