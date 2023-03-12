@@ -1,11 +1,11 @@
 import './PostForm.css';
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 const PostForm = ({ handleSubmitForm, card, post }) => {
   const [postForm, setPostForm] = useState({ answer: '' });
-  const [streak, setStreak] = useState(0);
   const handleChange = useRef();
   const handleSubmit = useRef();
+  const { current: streakRef } = useRef({ curStreak: 0, highestStreak: 0})
     
   useEffect(() => {
     setPostForm(prevPostForm => ({
@@ -14,14 +14,15 @@ const PostForm = ({ handleSubmitForm, card, post }) => {
     }))
   }, [card])
 
+  
   const checkCorrect = useMemo(() => {
     const rightAns = card.answer.toLowerCase().split(' ')
     const userAns = post?.answer?.toLowerCase().replace(/[.,]/g, "")
+    const isCorrect = rightAns[rightAns.length - 1].includes(userAns)
     if (!userAns) return !!userAns
-
-    return rightAns[rightAns.length - 1].includes(userAns)
+    return isCorrect
   }, [post, card])
-
+      
   handleChange.current = (e) => {
     const key = e.target.name;
     setPostForm(prevPostForm => ({
@@ -32,7 +33,16 @@ const PostForm = ({ handleSubmitForm, card, post }) => {
   
   handleSubmit.current = (e) => {
     e.preventDefault();
-    handleSubmitForm(postForm);    
+    handleSubmitForm(postForm);
+      const rightAns = card.answer.toLowerCase().split(' ')
+      const userAns = postForm?.answer?.toLowerCase().replace(/[.,]/g, "")
+      const isCorrect = rightAns[rightAns.length - 1].includes(userAns)
+    if (isCorrect) {
+      streakRef.curStreak += 1;
+      streakRef.highestStreak += streakRef.curStreak > streakRef.highestStreak ? 1 : 0;
+      } else {
+        streakRef.curStreak = 0;
+      }
   }
 
   return (
@@ -49,7 +59,10 @@ const PostForm = ({ handleSubmitForm, card, post }) => {
           onChange={handleChange.current}
         />
         <input type="submit" value="Submit" className="submit-btn" />
-        <div className='user-streak'>{`Your current streak: ${streak}`}</div>
+        <div className='streak-container'>
+          <div className="current-streak">{`Your current streak: ${streakRef.curStreak}`}</div>
+          <div className="highest-streak">{`Your highest streak: ${streakRef.highestStreak}`}</div>
+        </div>
       </form>
       <div className={`ans-checker ${post ? checkCorrect : 'init'}`}>
         {`Your answer is ${checkCorrect ? 'correct' : 'incorrect, please try again'}`}

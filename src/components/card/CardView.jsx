@@ -26,12 +26,12 @@ const CardView = () => {
         setPost('')
         break;
         
-      case 'NEXT':
-        
-        const nextCard = CARD_DATA.find(c => c.id === ((card.id < CARD_DATA.length - 1) ? card.id + 1 : CARD_DATA.length - 1))
-        setCard(nextCard)
-        setFront(true)
-        setPost('')
+        case 'NEXT':
+          
+          const nextCard = CARD_DATA.find(c => c.id === ((card.id < CARD_DATA.length - 1) ? card.id + 1 : CARD_DATA.length - 1))
+          setCard(nextCard)
+          setFront(true)
+          setPost('')
       break;
       
       default:
