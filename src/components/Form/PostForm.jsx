@@ -1,8 +1,9 @@
 import './PostForm.css';
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 
 const PostForm = ({ handleSubmitForm, card, post }) => {
   const [postForm, setPostForm] = useState({ answer: '' });
+  const [isCorrect, setIsCorrect] = useState(false);
   const handleChange = useRef();
   const handleSubmit = useRef();
   const { current: streakRef } = useRef({ curStreak: 0, highestStreak: 0})
@@ -12,16 +13,18 @@ const PostForm = ({ handleSubmitForm, card, post }) => {
       ...prevPostForm, 
       answer: '',
     }))
-  }, [card])
-
-  
-  const checkCorrect = useMemo(() => {
     const rightAns = card.answer.toLowerCase().split(' ')
     const userAns = post?.answer?.toLowerCase().replace(/[.,]/g, "")
-    const isCorrect = rightAns[rightAns.length - 1].includes(userAns)
-    if (!userAns) return !!userAns
-    return isCorrect
-  }, [post, card])
+    if (!userAns) {
+      setIsCorrect(!!userAns)
+    } else {
+      const checkCorrect = rightAns[rightAns.length - 1].includes(userAns)
+      setIsCorrect(checkCorrect)
+    }
+
+  }, [card, post])
+
+
       
   handleChange.current = (e) => {
     const key = e.target.name;
@@ -34,15 +37,15 @@ const PostForm = ({ handleSubmitForm, card, post }) => {
   handleSubmit.current = (e) => {
     e.preventDefault();
     handleSubmitForm(postForm);
-      const rightAns = card.answer.toLowerCase().split(' ')
-      const userAns = postForm?.answer?.toLowerCase().replace(/[.,]/g, "")
-      const isCorrect = rightAns[rightAns.length - 1].includes(userAns)
-    if (isCorrect) {
-      streakRef.curStreak += 1;
-      streakRef.highestStreak += streakRef.curStreak > streakRef.highestStreak ? 1 : 0;
-      } else {
-        streakRef.curStreak = 0;
-      }
+    //   const rightAns = card.answer.toLowerCase().split(' ')
+    //   const userAns = postForm?.answer?.toLowerCase().replace(/[.,]/g, "")
+    //   const isCorrect = rightAns[rightAns.length - 1].includes(userAns)
+    // if (isCorrect) {
+    //   streakRef.curStreak += 1;
+    //   streakRef.highestStreak += streakRef.curStreak > streakRef.highestStreak ? 1 : 0;
+    //   } else {
+    //     streakRef.curStreak = 0;
+    //   }
   }
 
   return (
@@ -64,8 +67,8 @@ const PostForm = ({ handleSubmitForm, card, post }) => {
           <div className="highest-streak">{`Your highest streak: ${streakRef.highestStreak}`}</div>
         </div>
       </form>
-      <div className={`ans-checker ${post ? checkCorrect : 'init'}`}>
-        {`Your answer is ${checkCorrect ? 'correct' : 'incorrect, please try again'}`}
+      <div className={`ans-checker ${post ? isCorrect : 'init'}`}>
+        {`Your answer is ${isCorrect ? 'correct' : 'incorrect, please try again'}`}
       </div>
     </>
   );
