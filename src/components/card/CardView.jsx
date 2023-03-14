@@ -31,6 +31,13 @@ const CardView = () => {
           const nextCard = CARD_DATA.find(c => c.id === ((card.id < CARD_DATA.length - 1) ? card.id + 1 : CARD_DATA.length - 1))
           setCard(nextCard)
           setFront(true)
+        setPost('')
+        
+        case 'RANDOM':
+          
+          const ramdomCard = CARD_DATA[Math.floor(Math.random() * CARD_DATA.length)]
+          setCard(ramdomCard)
+          setFront(true)
           setPost('')
       break;
       
@@ -53,6 +60,7 @@ const CardView = () => {
       <div className='dir-btn'>
         <Button onHandleCard={() => handleSwitchCard('PREVIOUS')}>Previous</Button>
         <Button onHandleCard={() => handleSwitchCard('NEXT')}>Next</Button>
+        <Button onHandleCard={() => handleSwitchCard('RANDOM')}>Randomize</Button>
       </div>
       <PostForm
         handleSubmitForm={handleSubmitForm}
