@@ -1,0 +1,63 @@
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100%;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+img:not([hidden]),
+picture:not([hidden]),
+video:not([hidden]),
+audio:not([hidden]),
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  outline: none;
+  border: none;
+}
+
+textarea {
+  resize: none;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

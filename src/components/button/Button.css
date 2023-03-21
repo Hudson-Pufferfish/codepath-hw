@@ -1,0 +1,15 @@
+.btn {
+    padding: 0.5em 1.2em;
+    margin: 1em;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    background-color: #2f2f2f;
+    color: #fff;
+    font-weight: 500;
+    box-shadow: 0 4px 12px 2px #565656;
+}
+
+.btn:active {
+    transform: translateY(3px);
+    box-shadow: 2px 2px 0 0 #565656;
+}
