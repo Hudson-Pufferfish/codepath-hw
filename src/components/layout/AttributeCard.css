@@ -12,3 +12,8 @@
     display: grid;
     place-items: center;
 }
+
+.attribute-container:active {
+    transform: translateY(3px);
+    box-shadow: 2px 2px 0 0 #565656;
+}

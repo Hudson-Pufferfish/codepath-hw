@@ -28,13 +28,27 @@ const CatStumble = () => {
         setShowCatInfo(true);
       }
     } catch (error) {
-      console.log(`There is some error: ${error.message}`);
+      console.error(`There is some error: ${error.message}`);
     }
   }, []);
 
   const handleNewCat = useCallback(async () => {
     fetchCatImage();
   }, [fetchCatImage]);
+
+  const handleRemoveBan = useCallback((e) => {
+    const attribute = e.target.getAttribute('data-attribute');
+    const value = e.target.getAttribute('data-value');
+    console.log(attribute, value);
+
+    setBanList(prevBanList => {
+      const newBan = prevBanList.filter((item) => {
+        return item[0] !== attribute && item[1] !== value;
+      });
+
+    return [...newBan]
+  })
+  }, [])
 
   // const handleBanAttribute = useCallback((attribute) => {
   //   setBanList([...banList, attribute]);
@@ -52,42 +66,71 @@ const CatStumble = () => {
   //   return attributesToDisplay.filter((attribute) => !banList.includes(attribute.label));
   // }, [attributesToDisplay, banList]);
 
+  console.log("🚀 ----------------------------------🚀")
+  console.log("🚀 ~ CatStumble ~ banList:", banList)
+  console.log("🚀 ----------------------------------🚀")
+
   return (
     <>
       <div className="container">
-        <div className="left-container">Who have we seen so far?</div>
+        <div className="left-container">
+          <h3>
+            Who have we seen so far?
+          </h3>
+        </div>
         <div className="center-container">
-          <h1>Cat Stumble</h1>
+          <h2>Cat Stumble</h2>
           <Button onHandleCard={handleNewCat}>Stumble</Button>
           {showCatInfo ? (
-            <>
+            <div className='info-container'>
               <div className="img-container">
                 <img src={catInfo.url} alt="Random cat" />
               </div>
-              <AttributeCard
-                attribute="width"
-              >
-                {`Width: ${catInfo.width}`}
-              </AttributeCard>
-              <AttributeCard
-                attribute="height"
-              >
-                {`Height: ${catInfo.height}`}
-              </AttributeCard>
-              <AttributeCard
-                attribute="origin"
-              >
-                {`Origin: ${catInfo.breeds?.length > 0 ? catInfo.breeds[0].origin : 'No origin info'}`}
-              </AttributeCard>
-              <AttributeCard
-                attribute="name"
-              >
-                {`Name: ${catInfo.categories?.length > 0 ? catInfo.categories[0].name : 'No name info'}`}
-              </AttributeCard>
-            </>
+                <AttributeCard
+                  attribute="width"
+                  value={catInfo.width}
+                  setBanList={setBanList}
+                />
+                <AttributeCard
+                  attribute="height"
+                  value={catInfo.height}
+                  setBanList={setBanList}
+                />
+                <AttributeCard
+                  attribute="origin"
+                  value={catInfo.breeds?.length > 0 ? catInfo.breeds[0].origin : 'No origin info'}
+                  setBanList={setBanList}
+                />
+                <AttributeCard
+                  attribute="name"
+                  value={catInfo.categories?.length > 0 ? catInfo.categories[0].name : 'No name info'}
+                  setBanList={setBanList}
+                />
+            </div>
           ): null}
         </div>
-        <div className="right-container">Ban List</div>
+        <div className="right-container">
+          <h3>
+            Ban List
+          </h3>
+          <div className="ban-content">
+            {banList ?
+              banList.map(([key, value], index) => (
+                <div
+                  key={index}
+                  className="ban-item"
+                  data-attribute={key}
+                  data-value={value}
+                  onClick={handleRemoveBan}>
+                  {`${key} ${value}`}
+                </div>
+              ))
+            
+              : null
+            }
+          </div>
+
+        </div>
       </div>
     </>
   );
