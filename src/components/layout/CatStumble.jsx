@@ -5,7 +5,8 @@ import Button from '../button/Button';
 import AttributeCard from './AttributeCard';
 
 const CatStumble = () => {
-  const [catInfo, setCatInfo] = useState('');
+  const [catInfo, setCatInfo] = useState({});
+  const [catMenu, setCatMenu] = useState([]);
   const [banList, setBanList] = useState([]);
   const [showCatInfo, setShowCatInfo] = useState(false);
   const isMounted = useRef(true);
@@ -26,21 +27,25 @@ const CatStumble = () => {
       if (isMounted.current) {
         setCatInfo(catResponse.data);
         setShowCatInfo(true);
+        setCatMenu(prevCatMenu => {
+            return [...prevCatMenu, catResponse.data.id ]
+        })
       }
     } catch (error) {
       console.error(`There is some error: ${error.message}`);
     }
   }, []);
+  console.log(catMenu);
 
   const handleNewCat = useCallback(async () => {
     fetchCatImage();
   }, [fetchCatImage]);
 
+
+  
   const handleRemoveBan = useCallback((e) => {
     const attribute = e.target.getAttribute('data-attribute');
     const value = e.target.getAttribute('data-value');
-    console.log(attribute, value);
-
     setBanList(prevBanList => {
       const newBan = prevBanList.filter((item) => {
         return item[0] !== attribute && item[1] !== value;
@@ -50,33 +55,21 @@ const CatStumble = () => {
   })
   }, [])
 
-  // const handleBanAttribute = useCallback((attribute) => {
-  //   setBanList([...banList, attribute]);
-  // }, [banList]);
-
-  // const attributesToDisplay = [
-  //   { label: 'Image', value: catInfo.url },
-  //   { label: 'Breed', value: catInfo.breeds?.length > 0 ? catInfo.breeds[0].name : '' },
-  //   { label: 'Temperament', value: catInfo.breeds?.length > 0 ? catInfo.breeds[0].temperament : '' },
-  //   { label: 'Origin', value: catInfo.breeds?.length > 0 ? catInfo.breeds[0].origin : '' },
-  //   { label: 'Life Span', value: catInfo.breeds?.length > 0 ? catInfo.breeds[0].life_span : '' },
-  // ];
-
-  // const filteredAttributes = useMemo(() => {
-  //   return attributesToDisplay.filter((attribute) => !banList.includes(attribute.label));
-  // }, [attributesToDisplay, banList]);
-
-  console.log("🚀 ----------------------------------🚀")
-  console.log("🚀 ~ CatStumble ~ banList:", banList)
-  console.log("🚀 ----------------------------------🚀")
-
   return (
     <>
       <div className="container">
         <div className="left-container">
           <h3>
-            Who have we seen so far?
+            Stumbled cats ID?
           </h3>
+          <div className='stumble-content'>
+            {catMenu ?
+              catMenu.map((cat, index) => (
+                <div key={index}>{cat}</div>
+              )
+
+            ): null}
+          </div>
         </div>
         <div className="center-container">
           <h2>Cat Stumble</h2>
