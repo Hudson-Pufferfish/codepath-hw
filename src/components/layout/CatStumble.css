@@ -58,3 +58,32 @@
     outline: none;
     box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
   }
+
+  .statistics-container {
+    margin: 1.2rem 1.5rem 0 0;
+  }
+  
+  .statistics-container p {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+  
+  .statistics-container p:first-of-type {
+    margin-top: 0;
+  }
+  
+  .statistics-container p:last-of-type {
+    margin-bottom: 0;
+  }
+  
+  .statistics-container .mean-height {
+    color: #007bff;
+  }
+  
+  .statistics-container .mode-height {
+    color: #28a745;
+  }
+  
+  .statistics-container .median-height {
+    color: #dc3545;
+  }
