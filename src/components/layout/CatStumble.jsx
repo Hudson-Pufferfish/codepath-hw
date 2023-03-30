@@ -2,7 +2,6 @@ import React, { useState, useEffect, useCallback, useRef, useMemo } from 'react'
 import "./CatStumble.css";
 import axios from 'axios';
 import Button from '../button/Button';
-import AttributeCard from './AttributeCard';
 
 const CatStumble = () => {
   const [catMenu, setCatMenu] = useState([]);
