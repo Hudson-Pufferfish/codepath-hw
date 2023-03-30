@@ -1,20 +1,8 @@
 import React, { useCallback } from 'react';
 import './AttributeCard.css'
 
-const AttributeCard = ({ attribute, value, setBanList }) => {
-  const handleAddBan = useCallback((e) => {
-    const attribute = e.target.getAttribute('data-attribute');
-    const value = e.target.getAttribute('data-value');
-    setBanList(prevBanList => {
-      const isDuplicateBan = prevBanList.some((item) => {
-        return item[0] === attribute && item[1] === value;
-      });
-      const newBan = [
-        [attribute, value]
-      ]
-    return isDuplicateBan ? [...prevBanList] : [...prevBanList,...newBan]
-  })
-  }, [])
+const AttributeCard = ({ attribute, value }) => {
+
 
   return (
     <div 

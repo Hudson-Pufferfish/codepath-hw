@@ -1,43 +1,40 @@
-# Web Development Project 4 - *Meow Meow App*
+# Web Development Project 5 - *Cat Spies Dashboard*
 
 Submitted by: **Hudson Nguyen**
 
-This web app: **Show meow meow creatures**
+This web app: **Cat Dashboard**
 
-Time spent: **8** hours spent in total
+Time spent: **9** hours spent in total
 
 ## Required Features
 
 The following **required** functionality is completed:
 
-- [x] **Clicking a button creates a new API fetch request and displays at least three attributes from the returned JSON data**
-- [x] **Only one item/API call is viewable at a time**
-- [x] **API calls appear random to the user**
-- [x] **At least one image is displayed per API call**
-- [x] **Clicking on a displayed value for one attribute adds it to a displayed ban list**
-- [x] **Attributes on the ban list prevent further images/API results with that attribute from being displayed**
+- [x] **The list displays a list of data fetched using an API call**
+- [x] **Data uses the useEffect React hook and async/await syntax**
+- [x] **The app dashboard includes at least three summary statistics about the data such as**
+  - [ ] *insert details*
+- [x] **A search bar allows the user to search for an item in the fetched data**
+- [x] **Multiple different filters (2+) allow the user to filter items in the database by specified categories**
 
 The following **optional** features are implemented:
 
-- [x] Multiple types of attributes can be added to the ban list
-- [x] Users can see a stored history of their previously viewed items from their session
+- [x] Multiple filters can be applied simultaneously
+- [x] Filters use different input types such as a text input, a selection, or a slider
+- [x] The user can enter specific bounds for filter values
 
 The following **additional** features are implemented:
 
-* [x] Use useCallback and useMemo to improve performance!
+* [x] Using useCallback, useRef, useMemo hook for better optimization; using Typescript for better type checking!
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='./src/assets/unit04.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
-GIF created with [peek](https://github.com/phw/peek) for Linux.
-<!-- Recommended tools:
-[Kap](https://getkap.co/) for macOS
-[ScreenToGif](https://www.screentogif.com/) for Windows
-[peek](https://github.com/phw/peek) for Linux. -->
+GIF created with [peek](https://github.com/phw/peek) for Linux. 
 
 ## Notes
 
