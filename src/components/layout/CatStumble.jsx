@@ -15,7 +15,7 @@ const CatStumble = () => {
 
   useEffect(() => {
     isMounted.current = true;
-    fetchCatImage();
+    fetchCat();
     return () => {
       // unmounted component
       isMounted.current = false;
@@ -75,9 +75,9 @@ const CatStumble = () => {
     }
   }, [catMenu, searchId, minWidth, minHeight]);
 
-  const fetchCatImage = useCallback(async () => {
+  const fetchCat = useCallback(async () => {
     try {
-      const catResponse = await axios.get(`https://api.thecatapi.com/v1/images/search?limit=10`);
+      const catResponse = await axios.get(`https://api.thecatapi.com/v1/s/search?limit=10`);
 
       if (isMounted.current) {
         setCatMenu(catResponse.data);
