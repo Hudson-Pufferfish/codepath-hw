@@ -7,6 +7,8 @@ import AttributeCard from './AttributeCard';
 const CatStumble = () => {
   const [catMenu, setCatMenu] = useState([]);
   const [searchId, setSearchId] = useState("");
+  const [minWidth, setMinWidth] = useState("");
+  const [minHeight, setMinHeight] = useState("");
   const isMounted = useRef(true);
 
   useEffect(() => {
@@ -34,10 +36,28 @@ const CatStumble = () => {
     setSearchId(event.target.value);
   }, [])
 
-  const filteredCats = useMemo(() => {
+  const handleMinWidth = useCallback((event) => {
+    setMinWidth(event.target.value);
+  }, [])
 
-    return catMenu.filter(cat => cat.id.includes(searchId))
-  }, [searchId]);
+  const handleMinHeight = useCallback((event) => {
+    setMinHeight(event.target.value);
+  }, [])
+
+  const filteredCats = () => {
+    return catMenu.filter(cat => {
+      if (searchId !== "" && !cat.id.includes(searchId)) {
+        return false;
+      }
+      if (minWidth !== "" && cat.width < minWidth) {
+        return false;
+      }
+      if (minHeight !== "" && cat.height < minHeight) {
+        return false;
+      }
+      return true;
+    });
+  };
 
   return (
     <>
@@ -45,6 +65,8 @@ const CatStumble = () => {
         <h1 className='dashboard-title'>Cat Dashboard</h1>
         <div className="search-container">
           <input type="text" placeholder="Search for a cat by ID" value={searchId} onChange={handleSearch} />
+          <input type="text" placeholder="Filter by minimum width" value={minWidth} onChange={handleMinWidth} />
+          <input type="text" placeholder="Filter by minimum height" value={minHeight} onChange={handleMinHeight} />
         </div>
         <div className="info-container">
           <table>
@@ -57,7 +79,7 @@ const CatStumble = () => {
                 </tr>
               </thead>
               <tbody>
-                {filteredCats.map((cat, index) => (
+                {filteredCats().map((cat, index) => (
                   <tr key={cat.id}>
                     <td>{index + 1}</td>
                     <td>{cat.id}</td>
