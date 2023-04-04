@@ -15,6 +15,9 @@ const CatItem = () => {
       <h2 className="title">Spy Name: {name}</h2>
       <p className="info">Width: {width}</p>
       <p className="info">Height: {height}</p>
+      <p className="info">
+        What is interesting about this data: This cat has {height > width ? "greater height than width!" : "greater width than height!"}
+      </p>
       <img src={url} alt={name} className="image" />
     </div>
   );
