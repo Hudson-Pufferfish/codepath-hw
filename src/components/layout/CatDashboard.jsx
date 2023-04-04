@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback, useRef, useMemo } from "react"
 import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip } from "recharts";
 import "./CatDashboard.css";
 import axios from "axios";
+import { Outlet, useNavigate } from "react-router-dom";
 
 const CatDashboard = () => {
   const [catMenu, setCatMenu] = useState([]);
@@ -12,6 +13,11 @@ const CatDashboard = () => {
   const [modeHeight, setModeHeight] = useState(0);
   const [medianHeight, setMedianHeight] = useState(0);
   const isMounted = useRef(true);
+  const navigate = useNavigate();
+
+  const handleRowClick = useCallback((catId, cat) => {
+    navigate(`/cats/${catId}?name=${cat.id}&width=${cat.width}&height=${cat.height}&url=${cat.url}`);
+  }, []);
 
   useEffect(() => {
     isMounted.current = true;
@@ -113,7 +119,7 @@ const CatDashboard = () => {
       return true;
     });
   }, [catMenu, searchId, minWidth, minHeight]);
-  console.log(filteredCats);
+  // console.log(filteredCats);
 
   return (
     <>
@@ -136,7 +142,7 @@ const CatDashboard = () => {
             </thead>
             <tbody>
               {filteredCats.map((cat, index) => (
-                <tr key={cat.id}>
+                <tr key={cat.id} onClick={() => handleRowClick(cat.id, cat)}>
                   <td>{index + 1}</td>
                   <td>{cat.id}</td>
                   <td>{cat.width}</td>
@@ -145,6 +151,8 @@ const CatDashboard = () => {
               ))}
             </tbody>
           </table>
+          <Outlet />
+
           <div className="stats-container">
             <div className="stats">
               <p>Mean Height: {meanHeight.toFixed(2)}</p>

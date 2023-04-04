@@ -5,16 +5,22 @@
 .info-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
-  margin: 2rem 1.2rem;
+  justify-content: space-between;
   gap: 1.8rem;
 }
 
 table {
   border-collapse: collapse;
   width: 100%;
-  max-width: 500px;
-  /* margin: 0 auto; */
+  max-width: 300px;
+}
+
+table tbody tr {
+  cursor: pointer;
+  transition: background-color 0.4s ease-in-out;
+}
+table tbody tr:hover {
+  background-color: lightgray;
 }
 
 th,
@@ -38,8 +44,6 @@ td img {
 }
 
 .search-container {
-  display: flex;
-  justify-content: center;
   margin-bottom: 1rem;
 }
 
