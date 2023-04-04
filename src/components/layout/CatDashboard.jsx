@@ -1,9 +1,8 @@
 import React, { useState, useEffect, useCallback, useRef, useMemo } from "react";
-import "./CatStumble.css";
+import "./CatDashboard.css";
 import axios from "axios";
-import Button from "../button/Button";
 
-const CatStumble = () => {
+const CatDashboard = () => {
   const [catMenu, setCatMenu] = useState([]);
   const [searchId, setSearchId] = useState("");
   const [minWidth, setMinWidth] = useState("");
@@ -77,7 +76,7 @@ const CatStumble = () => {
 
   const fetchCat = useCallback(async () => {
     try {
-      const catResponse = await axios.get(`https://api.thecatapi.com/v1/s/search?limit=10`);
+      const catResponse = await axios.get(`https://api.thecatapi.com/v1/images/search?limit=10`);
 
       if (isMounted.current) {
         setCatMenu(catResponse.data);
@@ -155,4 +154,4 @@ const CatStumble = () => {
   );
 };
 
-export default CatStumble;
+export default CatDashboard;

@@ -1,12 +1,12 @@
 
 import './App.css'
-import CatStumble from './components/layout/CatStumble'
+import CatDashboard from './components/layout/CatDashboard'
 
 function App() {
 
   return (
     <div className="App">
-      <CatStumble></CatStumble>
+      <CatDashboard></CatDashboard>
 
     </div>
   )
