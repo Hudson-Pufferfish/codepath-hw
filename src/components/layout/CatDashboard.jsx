@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback, useRef, useMemo } from "react";
+import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip } from "recharts";
 import "./CatDashboard.css";
 import axios from "axios";
 
@@ -112,6 +113,7 @@ const CatDashboard = () => {
       return true;
     });
   }, [catMenu, searchId, minWidth, minHeight]);
+  console.log(filteredCats);
 
   return (
     <>
@@ -143,10 +145,22 @@ const CatDashboard = () => {
               ))}
             </tbody>
           </table>
-          <div className="statistics-container">
-            <p>Mean Height: {meanHeight.toFixed(2)}</p>
-            <p>Mode Height: {modeHeight}</p>
-            <p>Median Height: {medianHeight}</p>
+          <div className="stats-container">
+            <div className="stats">
+              <p>Mean Height: {meanHeight.toFixed(2)}</p>
+              <p>Mode Height: {modeHeight}</p>
+              <p>Median Height: {medianHeight}</p>
+            </div>
+            <div className="chart">
+              <LineChart width={600} height={300} data={filteredCats} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
+                <Line type="monotone" dataKey="width" stroke="#8884d8" />
+                <Line type="monotone" dataKey="height" stroke="#8884d8" />
+                <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
+                <XAxis dataKey="name" />
+                <YAxis />
+                <Tooltip />
+              </LineChart>
+            </div>
           </div>
         </div>
       </div>
