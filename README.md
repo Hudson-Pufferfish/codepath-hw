@@ -1,25 +1,42 @@
-# This is a collection of projects in WEB102 | Intermediate Web Development - Spring 2023
+# Web Development Project 7 - *Crewmates*
 
-## Table of Contents:
+Submitted by: **Hudson Nguyen**
 
-### Projects:
+This web app: **Do you currently have a game that you absolutely love? Have you ever wanted to customize the characters or build your own team in the game? Now you can make your own team of players in any game of your choosing with this week's project! You will plan, design, and build a custom web app that allows the user to assemble a specific type of team. You can choose their own theme for the app and are encouraged to rename it based on that theme.**
 
-- [Unit's project 1](https://github.com/Hudson-Pufferfish/codepath-hw/tree/unit01)
-- [Unit's project 2](https://github.com/Hudson-Pufferfish/codepath-hw/tree/unit02)
-- [Unit's project 3](https://github.com/Hudson-Pufferfish/codepath-hw/tree/unit03)
-- [Unit's project 4](https://github.com/Hudson-Pufferfish/codepath-hw/tree/unit04)
-- [Unit's project 5](https://github.com/Hudson-Pufferfish/codepath-hw/tree/unit05)
-- [Unit's project 6](https://github.com/Hudson-Pufferfish/codepath-hw/tree/unit06)
-- [Unit's project 7](https://github.com/Hudson-Pufferfish/codepath-hw/tree/unit07)
-- [Unit's project 8](https://github.com/Hudson-Pufferfish/codepath-hw/tree/unit08)
-- [Unit's project 9](https://github.com/Hudson-Pufferfish/codepath-hw/tree/unit09)
-- [Unit's project 10](https://github.com/Hudson-Pufferfish/codepath-hw/tree/unit10)
+Time spent: **3** hours spent in total
 
+## Required Features
 
+The following **required** functionality is completed:
 
-## Contributor:
+- [ ] **A create form allows users to add new cremates**
+- [ ] **Users can name the crewmate and set the crewmate's attributes by clicking on one of several values**
+- [ ] **The site displays a summary page of all the user's added crewmates**
+- [ ] **A previously created crewmate can be updated and deleted from the crewmate list**
+- [ ] **Each crewmate has a direct, unique link to an info page about them**
 
-- Hudson Nguyen - Luther College
+The following **optional** features are implemented:
+
+- [ ] A crewmate can be given a category upon creation which restricts their attributes
+- [ ] The site displays summary statistics about a user's crew on their crew page 
+- [ ] The site displays a custom "success" metric about a user's crew which changes the look of the crewmate list
+
+The following **additional** features are implemented:
+
+* [ ] List anything else that you added to improve the site's functionality!
+
+## Video Walkthrough
+
+Here's a walkthrough of implemented user stories:
+
+<img src='src/assets/unit07.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+GIF created with [peek](https://github.com/phw/peek) for Linux. 
+
+## Notes
+
+Describe any challenges encountered while building the app.
 
 ## License
 
