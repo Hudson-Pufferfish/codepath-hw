@@ -10,10 +10,14 @@ function App() {
       <nav>
         <ul>
           <li>
-            <NavLink to="/">Home</NavLink>
+            <NavLink exact to="/" activeClassName="active">
+              Home
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/crewmates">Crewmates</NavLink>
+            <NavLink to="/crewmates" activeClassName="active">
+              Crewmates
+            </NavLink>
           </li>
         </ul>
       </nav>

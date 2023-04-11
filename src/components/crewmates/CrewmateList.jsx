@@ -5,10 +5,10 @@ import Crewmate from "./Crewmate";
 const Crewmates = () => {
   return (
     <div className="crewmate-list">
-      <Crewmate></Crewmate>
-      <Crewmate></Crewmate>
-      <Crewmate></Crewmate>
-      <Crewmate></Crewmate>
+      <Crewmate name="Hudson" speed="20"></Crewmate>
+      <Crewmate name="Hana" speed="50"></Crewmate>
+      <Crewmate name="Beta" speed="40"></Crewmate>
+      <Crewmate name="Son Goku" speed="30"></Crewmate>
     </div>
   );
 };

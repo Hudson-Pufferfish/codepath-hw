@@ -1,4 +1,4 @@
-# Web Development Project 7 - *Crewmates*
+# Web Development Project 7 - _Crewmates_
 
 Submitted by: **Hudson Nguyen**
 
@@ -10,21 +10,21 @@ Time spent: **3** hours spent in total
 
 The following **required** functionality is completed:
 
-- [ ] **A create form allows users to add new cremates**
-- [ ] **Users can name the crewmate and set the crewmate's attributes by clicking on one of several values**
-- [ ] **The site displays a summary page of all the user's added crewmates**
-- [ ] **A previously created crewmate can be updated and deleted from the crewmate list**
-- [ ] **Each crewmate has a direct, unique link to an info page about them**
+- [x] **A create form allows users to add new cremates**
+- [x] **Users can name the crewmate and set the crewmate's attributes by clicking on one of several values**
+- [x] **The site displays a summary page of all the user's added crewmates**
+- [x] **A previously created crewmate can be updated and deleted from the crewmate list**
+- [x] **Each crewmate has a direct, unique link to an info page about them**
 
 The following **optional** features are implemented:
 
-- [ ] A crewmate can be given a category upon creation which restricts their attributes
-- [ ] The site displays summary statistics about a user's crew on their crew page 
-- [ ] The site displays a custom "success" metric about a user's crew which changes the look of the crewmate list
+- [x] A crewmate can be given a category upon creation which restricts their attributes
+- [x] The site displays summary statistics about a user's crew on their crew page
+- [x] The site displays a custom "success" metric about a user's crew which changes the look of the crewmate list
 
 The following **additional** features are implemented:
 
-* [ ] List anything else that you added to improve the site's functionality!
+- [x] Optimize web performance!
 
 ## Video Walkthrough
 
@@ -32,7 +32,7 @@ Here's a walkthrough of implemented user stories:
 
 <img src='src/assets/unit07.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
-GIF created with [peek](https://github.com/phw/peek) for Linux. 
+GIF created with [peek](https://github.com/phw/peek) for Linux.
 
 ## Notes
 

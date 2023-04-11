@@ -1,10 +1,10 @@
 import React from "react";
-import { Link, Route, Routes } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./Crewmate.css";
 
 const Crewmate = (props) => {
   const { name, speed, imgSrc } = props;
-  const crewId = 5;
+  const crewId = 3;
 
   return (
     <div className="crewmate-container">
