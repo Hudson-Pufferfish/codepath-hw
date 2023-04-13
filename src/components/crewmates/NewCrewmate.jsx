@@ -1,11 +1,13 @@
 import { useState } from "react";
 import "./NewCrewmate.css";
 import { supabase } from "../../client";
+import { useNavigate } from "react-router-dom";
 
 const NewCrewmate = () => {
   const [name, setName] = useState("");
   const [speed, setSpeed] = useState("");
   const [color, setColor] = useState("");
+  const navigate = useNavigate();
 
   const handleNameChange = (event) => {
     setName(event.target.value);
@@ -32,11 +34,14 @@ const NewCrewmate = () => {
     if (error) {
       console.error("Error creating new crewmate:", error.message);
     } else {
-      console.log("New crewmate created:", data);
+      alert("New crewmate created!", data);
       // Reset the form fields
       setName("");
       setSpeed("");
       setColor("");
+      setTimeout(() => {
+        navigate("/crewmates");
+      }, 1200);
     }
   };
 

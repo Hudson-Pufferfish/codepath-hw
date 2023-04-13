@@ -3,3 +3,7 @@
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   gap: 1.5rem 0.5rem;
 }
+.gallery-title {
+  text-align: center;
+  margin: 1.8rem;
+}

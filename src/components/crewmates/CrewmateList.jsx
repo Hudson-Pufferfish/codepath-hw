@@ -19,11 +19,16 @@ const CrewmateList = () => {
   }, []);
 
   return (
-    <div className="crewmate-list">
-      {crewmates.map((crewmate) => (
-        <Crewmate key={crewmate.id} crewId={crewmate.id} name={crewmate.name} speed={crewmate.speed} color={crewmate.color} />
-      ))}
-    </div>
+    <>
+      <h3 className="gallery-title">{`There ${crewmates.length > 1 ? "are" : "is"} currently ${crewmates.length} ${
+        crewmates.length > 1 ? "crewmates" : "crewmate"
+      } in the gallery`}</h3>
+      <div className="crewmate-list">
+        {crewmates.map((crewmate) => (
+          <Crewmate key={crewmate.id} crewId={crewmate.id} name={crewmate.name} speed={crewmate.speed} color={crewmate.color} />
+        ))}
+      </div>
+    </>
   );
 };
 
