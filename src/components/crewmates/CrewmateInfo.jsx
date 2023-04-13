@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import "./CrewmateInfo.css";
 import { supabase } from "../../client";
 
@@ -7,6 +7,7 @@ const CrewmateInfo = () => {
   const { id } = useParams();
   const [name, setName] = useState("");
   const [speed, setSpeed] = useState("");
+  const navigate = useNavigate();
 
   useEffect(() => {
     async function fetchCrewmate() {
@@ -32,7 +33,6 @@ const CrewmateInfo = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(`Name: ${name}, Speed: ${speed}`);
 
     // Update the crewmate's name and speed
     const { data, error } = await supabase.from("crewmate").update({ name, speed }).eq("id", id);
@@ -41,6 +41,7 @@ const CrewmateInfo = () => {
     } else {
       console.log("Crewmate updated:", data);
     }
+    navigate("/crewmates");
   };
 
   return (
@@ -55,11 +56,14 @@ const CrewmateInfo = () => {
           <label htmlFor="speed">Crewmate speed: </label>
           <input type="text" id="speed" className="crewmate-info-input" value={speed} onChange={handleSpeedChange} />
         </div>
-        <button type="submit" className="crewmate-info-button">
-          Save
-        </button>
-        {/* <Link to="/crewmates">
-        </Link> */}
+        <div className="crewmate-info-btn">
+          <Link to="/crewmates">
+            <button className="crewmate-info-cancel">Cancel</button>
+          </Link>
+          <button type="submit" className="crewmate-info-button">
+            Save
+          </button>
+        </div>
       </form>
     </div>
   );
