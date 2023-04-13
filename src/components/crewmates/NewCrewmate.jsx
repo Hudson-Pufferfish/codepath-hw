@@ -21,7 +21,6 @@ const NewCrewmate = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(`Name: ${name}, Speed: ${speed}, Color: ${color}`);
     // You can replace the console log with your own logic to submit the form data
 
     // Insert a new row into the crewmate table

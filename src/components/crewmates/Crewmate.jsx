@@ -4,8 +4,7 @@ import "./Crewmate.css";
 
 const Crewmate = (props) => {
   const crewmateRef = useRef(null);
-  const { name, speed, color } = props;
-  const crewId = 3;
+  const { name, speed, color, crewId } = props;
 
   useEffect(() => {
     crewmateRef.current.style.color = color;

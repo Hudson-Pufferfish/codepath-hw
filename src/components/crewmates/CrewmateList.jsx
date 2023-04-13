@@ -12,7 +12,6 @@ const Crewmates = () => {
       if (error) {
         console.error("Error fetching crewmates:", error.message);
       } else {
-        console.log("Crewmates:", data);
         setCrewmates(data);
       }
     }
@@ -22,7 +21,7 @@ const Crewmates = () => {
   return (
     <div className="crewmate-list">
       {crewmates.map((crewmate) => (
-        <Crewmate key={crewmate.id} name={crewmate.name} speed={crewmate.speed} color={crewmate.color} />
+        <Crewmate key={crewmate.id} crewId={crewmate.id} name={crewmate.name} speed={crewmate.speed} color={crewmate.color} />
       ))}
     </div>
   );

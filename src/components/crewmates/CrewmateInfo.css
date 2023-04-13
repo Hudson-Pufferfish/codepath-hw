@@ -1,14 +1,67 @@
-input {
-  padding: 10px;
+.crewmate-info-container {
+  margin: 20px;
+  padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  font-size: 16px;
-  color: #333;
-  background-color: #fff;
-  transition: border-color 0.2s ease-in-out;
+  background-color: #f8f8f8;
+  max-width: 30rem;
+  margin: 0 auto;
 }
 
-input:focus {
-  outline: none;
-  border-color: #007bff;
+.crewmate-info-header {
+  margin: 1.2rem;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.crewmate-info-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.crewmate-info-field {
+  margin-bottom: 10px;
+}
+
+.crewmate-info-label {
+  font-weight: bold;
+}
+
+.crewmate-info-input {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.crewmate-info-button {
+  width: 5rem;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #0077cc;
+  color: #fff;
+  cursor: pointer;
+  margin: 1rem auto 0;
+}
+
+.crewmate-info-button:hover {
+  background-color: #005fa3;
+}
+
+.crewmate-info-cancel {
+  margin-right: 0.8rem;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ccc;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.crewmate-info-cancel:hover {
+  background-color: #aaa;
 }
