@@ -1,11 +1,13 @@
 import React from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
+import "./CrewmateLayout.css";
 
 const CrewmateLayout = () => {
   return (
     <>
-      <div>This is the website with your crew</div>
-      <Link to="/crewmates">Back to crewmates list</Link>
+      <header>
+        <h1>View, create and customize your own crewmate character today!</h1>
+      </header>
       <Outlet />
     </>
   );

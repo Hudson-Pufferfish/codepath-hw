@@ -1,6 +1,6 @@
 .crewmate-container {
   min-height: 15rem;
-  height: 33rem;
+  height: 35rem;
   max-width: 25rem;
   padding: 1.5em 3em;
   border: 3px solid #edecec;
@@ -14,7 +14,12 @@
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
+.crewmate-props p:last-child {
+  font-weight: 600;
+}
+
 .crewmate-name {
+  font-weight: 600;
   font-size: 1.4rem;
   text-transform: capitalize;
 }
