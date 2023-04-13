@@ -8,7 +8,6 @@ const Crewmate = (props) => {
   const crewId = 3;
 
   useEffect(() => {
-    console.log(crewmateRef.current);
     crewmateRef.current.style.color = color;
   }, []);
 
@@ -17,14 +16,15 @@ const Crewmate = (props) => {
       <div className="crewmate-image">
         <img src={"src/assets/crewmate.png" ?? ""} alt="" rel="noreferrer noopener" className="crewmate-img" />
       </div>
-      <div className="crewmate-props">
+      <div className="crewmate-info">
         <p className="crewmate-name">Crewmate name: {name ?? "nameless"}</p>
         <p className="crewmate-speed">Crewmate speed: {speed ?? "no speed"}</p>
         <p ref={crewmateRef}>Crewmate color: {color ?? "no color"}</p>
+
+        <Link to={`${crewId}`}>
+          <button className="crewmate-btn">Edit info</button>
+        </Link>
       </div>
-      <Link to={`${crewId}`}>
-        <button className="crewmate-btn">Edit info</button>
-      </Link>
     </div>
   );
 };
