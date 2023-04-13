@@ -15,7 +15,7 @@ function App() {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/crewmates" activeClassName="active">
+            <NavLink to="/crewmates" activeClassName="active" end>
               Crewmates
             </NavLink>
           </li>
