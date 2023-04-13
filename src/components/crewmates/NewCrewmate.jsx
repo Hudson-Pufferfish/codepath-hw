@@ -7,7 +7,6 @@ const NewCrewmate = () => {
   const [name, setName] = useState("");
   const [speed, setSpeed] = useState("");
   const [color, setColor] = useState("");
-  const navigate = useNavigate();
 
   const handleNameChange = (event) => {
     setName(event.target.value);
@@ -39,9 +38,6 @@ const NewCrewmate = () => {
       setName("");
       setSpeed("");
       setColor("");
-      setTimeout(() => {
-        navigate("/crewmates");
-      }, 1200);
     }
   };
 
