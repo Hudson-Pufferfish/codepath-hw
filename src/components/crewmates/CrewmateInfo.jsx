@@ -39,7 +39,17 @@ const CrewmateInfo = () => {
     if (error) {
       console.error("Error updating crewmate:", error.message);
     } else {
-      console.log("Crewmate updated:", data);
+      alert("Crewmate list updated!", data);
+    }
+    navigate("/crewmates");
+  };
+
+  const handleDelete = async () => {
+    const { error } = await supabase.from("crewmate").delete().eq("id", id);
+    if (error) {
+      console.error("Error deleting crewmate:", error.message);
+    } else {
+      alert(`Crewmate ${id} deleted successfully`);
     }
     navigate("/crewmates");
   };
@@ -60,6 +70,9 @@ const CrewmateInfo = () => {
           <Link to="/crewmates">
             <button className="crewmate-info-cancel">Cancel</button>
           </Link>
+          <button className="crewmate-btn--delete" onClick={handleDelete}>
+            Delete
+          </button>
           <button type="submit" className="crewmate-info-button">
             Save
           </button>

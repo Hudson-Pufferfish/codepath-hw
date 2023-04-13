@@ -52,7 +52,6 @@
 }
 
 .crewmate-info-cancel {
-  margin-right: 0.8rem;
   padding: 5px 10px;
   border: none;
   border-radius: 5px;
@@ -64,4 +63,19 @@
 
 .crewmate-info-cancel:hover {
   background-color: #aaa;
+}
+
+.crewmate-btn--delete {
+  margin: 0 1.2rem;
+  background-color: #e74c3c;
+  border-color: #e74c3c;
+  color: #fff;
+  padding: 0.3rem 0.6rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+}
+
+.crewmate-btn--delete:hover {
+  background-color: #c0392b;
+  border-color: #c0392b;
 }

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Crewmate.css";
 
 const Crewmate = (props) => {

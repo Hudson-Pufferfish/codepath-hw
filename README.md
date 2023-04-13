@@ -4,7 +4,7 @@ Submitted by: **Hudson Nguyen**
 
 This web app: **Do you currently have a game that you absolutely love? Have you ever wanted to customize the characters or build your own team in the game? Now you can make your own team of players in any game of your choosing with this week's project! You will plan, design, and build a custom web app that allows the user to assemble a specific type of team. You can choose their own theme for the app and are encouraged to rename it based on that theme.**
 
-Time spent: **3** hours spent in total
+Time spent: crewmate-info-btn**3** hours spent in total
 
 ## Required Features
 

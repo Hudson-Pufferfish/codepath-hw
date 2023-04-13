@@ -23,6 +23,7 @@
   max-width: 100%;
   margin-bottom: 0.8rem;
 }
+
 .crewmate-info {
   height: calc(100% - 350px);
   display: flex;
@@ -59,6 +60,7 @@
   text-decoration: none;
   color: currentColor;
 }
+
 .crewmate-btn:hover {
   background-color: #fff;
   outline: 1px solid #6868ac;

@@ -3,7 +3,7 @@ import "./CrewmateList.css";
 import Crewmate from "./Crewmate";
 import { supabase } from "../../client";
 
-const Crewmates = () => {
+const CrewmateList = () => {
   const [crewmates, setCrewmates] = useState([]);
 
   useEffect(() => {
@@ -27,4 +27,4 @@ const Crewmates = () => {
   );
 };
 
-export default Crewmates;
+export default CrewmateList;
