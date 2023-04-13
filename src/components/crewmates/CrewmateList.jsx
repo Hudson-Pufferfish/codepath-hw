@@ -1,14 +1,29 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./CrewmateList.css";
 import Crewmate from "./Crewmate";
+import { supabase } from "../../client";
 
 const Crewmates = () => {
+  const [crewmates, setCrewmates] = useState([]);
+
+  useEffect(() => {
+    async function fetchCrewmates() {
+      const { data, error } = await supabase.from("crewmate").select("id, name, speed, color");
+      if (error) {
+        console.error("Error fetching crewmates:", error.message);
+      } else {
+        console.log("Crewmates:", data);
+        setCrewmates(data);
+      }
+    }
+    fetchCrewmates();
+  }, []);
+
   return (
     <div className="crewmate-list">
-      <Crewmate name="Hudson" speed="20" color={"Red".toLowerCase()} />
-      <Crewmate name="Hana" speed="50" />
-      <Crewmate name="Beta" speed="40" />
-      <Crewmate name="Son Goku" speed="30" />
+      {crewmates.map((crewmate) => (
+        <Crewmate key={crewmate.id} name={crewmate.name} speed={crewmate.speed} color={crewmate.color} />
+      ))}
     </div>
   );
 };

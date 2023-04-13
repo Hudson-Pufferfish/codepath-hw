@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./NewCrewmate.css";
+import { supabase } from "../../client";
 
 const NewCrewmate = () => {
   const [name, setName] = useState("");
@@ -18,10 +19,26 @@ const NewCrewmate = () => {
     setColor(event.target.value);
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     console.log(`Name: ${name}, Speed: ${speed}, Color: ${color}`);
     // You can replace the console log with your own logic to submit the form data
+
+    // Insert a new row into the crewmate table
+    const { data, error } = await supabase.from("crewmate").insert({
+      name,
+      speed,
+      color,
+    });
+    if (error) {
+      console.error("Error creating new crewmate:", error.message);
+    } else {
+      console.log("New crewmate created:", data);
+      // Reset the form fields
+      setName("");
+      setSpeed("");
+      setColor("");
+    }
   };
 
   const radioOptions = [
