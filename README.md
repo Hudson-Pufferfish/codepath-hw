@@ -12,8 +12,8 @@
 - [Unit's project 6](https://github.com/Hudson-Pufferfish/codepath-hw/tree/unit06)
 - [Unit's project 7](https://github.com/Hudson-Pufferfish/codepath-hw/tree/unit07)
 - [Unit's project 8](https://github.com/Hudson-Pufferfish/codepath-hw/tree/unit08)
-- [Unit's project 9](https://github.com/Hudson-Pufferfish/codepath-hw/tree/unit09)
-- [Unit's project 10](https://github.com/Hudson-Pufferfish/codepath-hw/tree/unit10)
+- [Unit's project 9](https://github.com/Hudson-Pufferfish/music-blog)
+- [Unit's project 10](https://github.com/Hudson-Pufferfish/music-blog)
 
 
 
